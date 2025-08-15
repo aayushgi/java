@@ -23,8 +23,20 @@ public static int bincoffe(int n, int r) {
   }
 }
 
-
+public static boolean isPrime(int n) {
+  boolean isPrime=true;
+  for(i=2; i<=n; i++){
+    if (n%i==0) {
+      isPrime=false;
+      return isPrime;
+    }
+    System.out.println(isPrime(12));
+    
+  }
+  
+}
     
 }
+
 
 
