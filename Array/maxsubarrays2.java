@@ -8,20 +8,29 @@ public class maxsubarrays2 {
         int currSum=0;
         int maxSum=Integer.MIN_VALUE;
         int prefix[]= new int[number.length];
-        for(int i=0; i<number.length; i++){
-            int start=i;
+
+ prefix[0]= number[0];
+
+
+        
+            
 
             //claculate prefix array
-            for(int i=1; i<prefix.length;i++)
+            for(int i=1; i<prefix.length;i++){
+                prefix[i]=prefix[i-1]+number[i];
+            }
+            for(int i=0; i<number.length; i++){
+                int start=i;
+            
             for(int j=i; j<number.length; j++){
                 int end =j;
-                currSum=0;
+                currSum= start==0? prefix[end] :prefix[end] - prefix[start-1];
            //     for(int k=start; k<=end; k++){
                     //subarray sum
           //          currSum+=number[k];
             //    }
          //   }
-            System.out.println(currSum);
+            
             if(maxSum<currSum){
                 maxSum=currSum;
             }
@@ -29,7 +38,7 @@ public class maxsubarrays2 {
 
         }
         
-      System.out.println("max sum = " +maxSum);  
+      System.out.println("Max sum = " + maxSum);
     }
     public static void main(String[] args) {
         int number[]={2, 4, 6, 8, 10};
