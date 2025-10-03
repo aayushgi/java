@@ -9,7 +9,7 @@ public class dayprint {
        
         switch (day) {
             case 1:
-            System.out.println("Monday");
+            System.out.println("MONDAY");
                 
                 break;
             case 2:
@@ -42,3 +42,4 @@ public class dayprint {
 
     }
 }
+
